@@ -136,7 +136,8 @@ public class GoogleFitManager implements
                 .addApi(Fitness.SENSORS_API)
                 .addApi(Fitness.HISTORY_API)
                 .addApi(Fitness.SESSIONS_API)
-                .addApi(Fitness.RECORDING_API);
+                .addApi(Fitness.RECORDING_API)
+                .addScope(Fitness.FITNESS_ACTIVITY_READ_WRITE);
 
         for (String scopeName : userScopes) {
             apiClientBuilder.addScope(new Scope(scopeName));
