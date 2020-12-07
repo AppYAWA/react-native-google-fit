@@ -511,10 +511,12 @@ class RNGoogleFit {
   }
 
   submitWorkout(options, callback) {
+    const { startDate, endDate } = prepareInput(options)
+
     googleFit.submitWorkout(
       options.workoutType,
-      Date.parse(options.startDate),
-      Date.parse(options.endDate),
+      startDate,
+      endDate,
       options.calories,
       (error) => {
         callback(error, false)
